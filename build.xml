@@ -4,7 +4,7 @@
 
 <target name="clean">
 	<delete dir="/reports"/>
-	</target>
+</target>
 <target name="prepare">
     <mkdir dir="/reports/logs"/>
 </target>
