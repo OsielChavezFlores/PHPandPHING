@@ -1,12 +1,6 @@
 <?xml version="1.0"?>
 <project name="PHPandPHING" default="build">
   <property name="package" value="PHPandPHING" override="true" />
-  <target name="clean">
-    <delete dir="/home/osiel/repositorios/PHPandPHING/reports"/>
-  </target>
-  <target name="prepare">
-    <mkdir dir="/home/osiel/repositorios/PHPandPHING/reports/logs"/>
-  </target>
 
 <target name="require.autoload">
    <autoloader autoloaderpath="vendor/autoload.php"/>
@@ -28,5 +22,5 @@
                   todir="/home/osiel/repositorios/PHPandPHING/reports"/>
   </target>
 
-  <target name="build" depends="clean,prepare,phpunit"/>
+  <target name="build" depends="phpunit"/>
 </project>
