@@ -29,5 +29,5 @@
                   todir="/reports"/>
   </target>
 
-  <target name="build" depends="phpunit"/>
+  <target name="build" depends="clean, prepare, phpunit"/>
 </project>
