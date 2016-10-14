@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <project name="PHPandPHING1" default="build">
-  <property name="package" value="PHPandPHING1" override="true" />
+<property name="package" value="PHPandPHING1" override="true" />
 
 <target name="clean">
 	<delete dir="../reports"/>
 </target>
+
 <target name="prepare">
     <mkdir dir="../reports/logs"/>
 </target>
@@ -13,21 +14,21 @@
    <autoloader autoloaderpath="vendor/autoload.php"/>
 </target>
 
-  <target name="phpunit"  depends="require.autoload">
-    <phpunit printsummary="true" haltonfailure="true">
-      <formatter todir="../reports/logs" type="xml"/>
-      <batchtest>
-        <fileset dir="test">
-          <include name="*Test.php"/>
-        </fileset>
-      </batchtest>
-      <formatter type="xml" todir="/reports" outfile="logfile.xml"/>
-   </phpunit>
-   <phpunitreport infile="../reports/logfile.xml"
-                  styledir="/usr/share/php/data/phing/etc"
-                  format="frames"
-                  todir="../reports"/>
-  </target>
+<target name="phpunit"  depends="require.autoload">
+	<phpunit printsummary="true" haltonfailure="true">
+		<formatter todir="../reports/logs" type="xml"/>
+		<batchtest>
+			<fileset dir="test">
+				<include name="*Test.php"/>
+		        </fileset>
+		</batchtest>
+		<formatter type="xml" todir="../reports" outfile="logfile.xml"/>
+	</phpunit>
+   	<phpunitreport infile="../reports/logfile.xml"
+		styledir="/usr/share/php/data/phing/etc"
+                format="frames"
+                todir="../reports"/>
+</target>
 
-  <target name="build" depends="clean, prepare, phpunit"/>
+<target name="build" depends="clean, prepare, phpunit"/>
 </project>
