@@ -3,7 +3,7 @@
   <property name="package" value="PHPandPHING1" override="true" />
 
 <target name="clean">
-	<delete dir="/reports"/>
+	<delete dir="/reports/"/>
 </target>
 <target name="prepare">
     <mkdir dir="/reports/logs"/>
@@ -26,7 +26,7 @@
    <phpunitreport infile="/reports/logfile.xml"
                   styledir="/usr/share/php/data/phing/etc"
                   format="frames"
-                  todir="/reports"/>
+                  todir="/reports/"/>
   </target>
 
   <target name="build" depends="clean, prepare, phpunit"/>
