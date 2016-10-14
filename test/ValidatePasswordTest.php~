@@ -1,5 +1,5 @@
 <?php
-	
+libxml_disable_entity_loader(false);	
 	class ValidatePasswordTest extends PHPUnit_Framework_TestCase{
 		public function testValidLength(){
 			$valPass = new ValidatePassword();
