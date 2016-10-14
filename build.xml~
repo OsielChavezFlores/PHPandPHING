@@ -3,7 +3,7 @@
   <property name="package" value="PHPandPHING1" override="true" />
 
 <target name="clean">
-	<exec command="rm -rf /reports"/>
+	<delete dir="/reports"/>
 </target>
 <target name="prepare">
     <mkdir dir="/reports/logs"/>
