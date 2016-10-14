@@ -1,6 +1,13 @@
 <?xml version="1.0"?>
-<project name="PHPandPHING" default="build">
-  <property name="package" value="PHPandPHING" override="true" />
+<project name="PHPandPHING1" default="build">
+  <property name="package" value="PHPandPHING1" override="true" />
+
+<target name="clean">
+    <delete dir="/reports"/>
+  </target>
+  <target name="prepare">
+    <mkdir dir="/reports/logs"/>
+  </target>
 
 <target name="require.autoload">
    <autoloader autoloaderpath="vendor/autoload.php"/>
@@ -8,19 +15,19 @@
 
   <target name="phpunit"  depends="require.autoload">
     <phpunit printsummary="true" haltonfailure="true">
-      <formatter todir="/home/osiel/repositorios/PHPandPHING/reports/logs" type="xml"/>
+      <formatter todir="/reports/logs" type="xml"/>
       <batchtest>
         <fileset dir="test">
           <include name="*Test.php"/>
         </fileset>
       </batchtest>
-      <formatter type="xml" todir="/home/osiel/repositorios/PHPandPHING/reports" outfile="logfile.xml"/>
+      <formatter type="xml" todir="/reports" outfile="logfile.xml"/>
    </phpunit>
-   <phpunitreport infile="/home/osiel/repositorios/PHPandPHING/reports/logfile.xml"
+   <phpunitreport infile="/reports/logfile.xml"
                   styledir="/usr/share/php/data/phing/etc"
                   format="frames"
-                  todir="/home/osiel/repositorios/PHPandPHING/reports"/>
+                  todir="/reports"/>
   </target>
 
-  <target name="build" depends="phpunit"/>
+  <target name="build" depends="clean,prepare,phpunit"/>
 </project>

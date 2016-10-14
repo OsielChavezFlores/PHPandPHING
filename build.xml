@@ -2,6 +2,13 @@
 <project name="PHPandPHING1" default="build">
   <property name="package" value="PHPandPHING1" override="true" />
 
+<target name="clean">
+    <delete dir="/reports"/>
+  </target>
+  <target name="prepare">
+    <mkdir dir="/reports/logs"/>
+  </target>
+
 <target name="require.autoload">
    <autoloader autoloaderpath="vendor/autoload.php"/>
 </target>
@@ -22,5 +29,5 @@
                   todir="/reports"/>
   </target>
 
-  <target name="build" depends="phpunit"/>
+  <target name="build" depends="clean,prepare,phpunit"/>
 </project>
