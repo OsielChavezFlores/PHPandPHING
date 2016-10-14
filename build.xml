@@ -3,11 +3,11 @@
   <property name="package" value="PHPandPHING1" override="true" />
 
 <target name="clean">
-    <delete dir="/reports/"/>
-  </target>
-  <target name="prepare">
+	<delete dir="/reports"/>
+	</target>
+<target name="prepare">
     <mkdir dir="/reports/logs"/>
-  </target>
+</target>
 
 <target name="require.autoload">
    <autoloader autoloaderpath="vendor/autoload.php"/>
@@ -21,12 +21,12 @@
           <include name="*Test.php"/>
         </fileset>
       </batchtest>
-      <formatter type="xml" todir="/reports/" outfile="logfile.xml"/>
+      <formatter type="xml" todir="/reports" outfile="logfile.xml"/>
    </phpunit>
    <phpunitreport infile="/reports/logfile.xml"
                   styledir="/usr/share/php/data/phing/etc"
                   format="frames"
-                  todir="/reports/"/>
+                  todir="/reports"/>
   </target>
 
   <target name="build" depends="clean,prepare,phpunit"/>
