@@ -4,7 +4,6 @@
 
 <target name="clean">
 	<delete dir="../reports"/>
-	<delete dir="/home/osiel/repositorios/PHPandPHING1/reports"/>
 </target>
 
 <target name="prepare">
