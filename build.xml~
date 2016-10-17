@@ -3,7 +3,7 @@
 <property name="package" value="PHPandPHING1" override="true" />
 
 <target name="clean">
-	<echo msg="Limpiando directorios de trabajo...."/>
+	<echo msg="Limpiando directorios de trabajo....."/>
 	<delete dir="../reports"/>
 </target>
 

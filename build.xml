@@ -8,14 +8,17 @@
 </target>
 
 <target name="prepare">
-    <mkdir dir="../reports/logs"/>
+	<echo msg="Creando directorios necesarios......"/>
+	<mkdir dir="../reports/logs"/>
 </target>
 
 <target name="require.autoload">
-   <autoloader autoloaderpath="vendor/autoload.php"/>
+	<echo msg="Utilizando Composer"/>
+	<autoloader autoloaderpath="vendor/autoload.php"/>
 </target>
 
 <target name="phpunit"  depends="require.autoload">
+	<echo msg="Comenzando tests........."/>
 	<phpunit printsummary="true" haltonfailure="true" haltonerror="true">
 		<formatter todir="../reports/logs" type="xml"/>
 		<batchtest>
