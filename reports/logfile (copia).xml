@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="AllTests" tests="2" assertions="2" failures="0" errors="0" time="0.004067">
+    <testsuite name="ValidatePasswordTest" file="/home/osiel/repositorios/PHPandPHING/test/ValidatePasswordTest.php" tests="1" assertions="1" failures="0" errors="0" time="0.003685">
+      <testcase name="testValidLength" class="ValidatePasswordTest" file="/home/osiel/repositorios/PHPandPHING/test/ValidatePasswordTest.php" line="4" assertions="1" time="0.003685"/>
+    </testsuite>
+    <testsuite name="Validate1PasswordTest" file="/home/osiel/repositorios/PHPandPHING/test/Validate1PasswordTest.php" tests="1" assertions="1" failures="0" errors="0" time="0.000382">
+      <testcase name="testValidLength" class="Validate1PasswordTest" file="/home/osiel/repositorios/PHPandPHING/test/Validate1PasswordTest.php" line="4" assertions="1" time="0.000382"/>
+    </testsuite>
+  </testsuite>
+</testsuites>
