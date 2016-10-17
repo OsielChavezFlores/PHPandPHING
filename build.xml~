@@ -15,7 +15,7 @@
 </target>
 
 <target name="phpunit"  depends="require.autoload">
-	<phpunit printsummary="true" haltonfailure="true">
+	<phpunit printsummary="true" haltonfailure="false">
 		<formatter todir="../reports/logs" type="xml"/>
 		<batchtest>
 			<fileset dir="test">
@@ -24,7 +24,7 @@
 		</batchtest>
 		<formatter type="xml" todir="../reports" outfile="logfile.xml"/>
 	</phpunit>
-   	<phpunitreport infile="/home/osiel/repositorios/PHPandPHING1/reports"
+   	<phpunitreport infile="../reports/logfile.xml"
 		styledir="/usr/share/php/data/phing/etc"
                 format="frames"
                 todir="../reports"/>
